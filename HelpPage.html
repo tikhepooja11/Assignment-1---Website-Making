@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>signup</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="register.js"></script>  
+  <link rel="stylesheet" type="text/css" href="signup.css"/>
+  <link rel="stylesheet" type="text/jsp" href="NewUserEntry.jsp"/>
+  
+ </head>
+ <body>
+		<div class="container1">
+				
+				<div class = "part2">
+				<h1>DAILY TASK TRACKING SYSTEM </h1>
+				</div>
+		</div>
+		<div class="container2">
+			<div id="id1">
+				<ul>
+ 			 	<li><a class="active" href="homepage.jsp">Home</a></li>
+		    	<li><a href="#news">NEWS</a></li>
+				<li><a href="#contact">CONTACT US</a></li>
+				<li><a href="#about">NOTIFICATIONS</a></li>
+				<li><a href="HelpPage.html">HELP</a></li>
+				<li><a href="loginpage.html">SIGNUP</a></li>
+				<li><a href="#about">ABOUT</a></li>
+				</ul>	
+			</div>
+		
+			<div id = "id2">
+				<form name="registration form" action="NewUserEntry.jsp" id="first_form"  method="post">			
+				Name	:<input type="text" name="userName" id="name"></br></br>
+				Address	:<input type="text" name="userAddr" id="addr"></br></br>
+				City	:<select name="userCity" id="register_city" style="width:160px">  
+								<option value="Pune">Pune</option>  
+								<option value="Mumbai">Mumbai</option>  
+								<option value="Nagpur">Nagpur</option>  
+								<option value="Aurangabad">Aurangabad</option>  
+								<option value="Banglore">Banglore</option> 
+							</select> </br></br>
+				Mail	:<input type="text" name="userMail" id="mail"></br></br>
+				Contact	:<input type="text" name="userContact"><br></br>
+				
+				
+				Gender	:<input type="radio" id="gender" name="userGender" value="male"/>Male  
+              			 <input type="radio" id="gender" name=userGender value="female"/>Female <br/>
+				Country	:<select name="userCountry" id="register_country" style="width:160px">  
+								<option value="India">India</option>  
+								<option value="Pakistan">Pakistan</option>  
+								<option value="Africa">Africa</option>  
+								<option value="China">China</option>  
+								<option value="Other">Other</option> 
+							</select> <br></br>
+				UserName	:<input type="text" name="uName"> </br></br>
+				Password	:<input type="text" name="uPassword" id="password"> <br/>
+				<button class="button"  type="submit" value="Register"><span>REGISTER </span></button>
+				</form>
+				
+				
+				<script type="text/javascript">
+				$(document).ready(function() {
+					 
+					  $('#first_form').submit(function(e) {
+					    e.preventDefault();
+					    var name = $('#name').val();
+					    var addr = $('#addr').val();
+					    var mail = $('#mail').val();
+					    var password = $('#password').val();
+					 
+					    $(".error").remove();
+					 
+					    if (name.length < 1) {
+					      $('#name').after('<span class="error">This field is required</span>');
+					    }
+					    if (addr.length < 1) {
+					      $('#addr').after('<span class="error">This field is required</span>');
+					    }
+					    if (mail.length < 1) {
+					      $('mail').after('<span class="error">This field is required</span>');
+					    } else {
+					      var regEx = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/; 
+					      var validEmail = regEx.test(email);
+					      if (!validEmail) {
+					        $('#email').after('<span class="error">Enter a valid email</span>');
+					      }
+					    }
+					    if (password.length < 8) {
+					      $('#password').after('<span class="error">Password must be at least 8 characters long</span>');
+					    }
+					  });
+					 
+					});
+
+				</script>
+				
+				
+			</div>
+			
+			<div id="id3">
+				<marquee direction = "right">This is key to <mark>TASK MANAGEMENT</mark>  to see the value of every moment</marquee>
+			</div>
+			
+			
+			
+		</div>
+		
+
+		
+    
+		
+		<div class="container3">
+		
+		
+		
+		</div>
+		
+
+	
+		
+ </body>
+</html>
